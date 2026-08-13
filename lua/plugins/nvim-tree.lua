@@ -4,8 +4,6 @@ return {
   config = function()
     local nvimtree = require("nvim-tree")
 
-    local hide_root_files = false
-
     nvimtree.setup({
       sync_root_with_cwd = true,
       respect_buf_cwd = false,
@@ -27,7 +25,7 @@ return {
       renderer = {
         highlight_opened_files = "all",
       },
-      git = { enable = false },
+      git = { enable = true },
       tab = {
         sync = {
           open = false,
