@@ -4,6 +4,8 @@ return {
   config = function()
     local nvimtree = require("nvim-tree")
 
+    local hide_root_files = false
+
     nvimtree.setup({
       sync_root_with_cwd = true,
       respect_buf_cwd = false,
@@ -25,7 +27,7 @@ return {
       renderer = {
         highlight_opened_files = "all",
       },
-      git = { enable = true },
+      git = { enable = false },
       tab = {
         sync = {
           open = false,
@@ -37,6 +39,6 @@ return {
 
     local keymap = vim.keymap
     keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
-    keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "Focus file explorer" })
+    keymap.set("n", "<leader>g", "<cmd>NvimTreeFocus<CR>", { desc = "Focus file explorer" })
   end,
 }

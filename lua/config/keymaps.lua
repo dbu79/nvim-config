@@ -38,5 +38,7 @@ end
 vim.keymap.set("n", "<leader>r", run_file, { desc = "Run current file" })
 
 -- Bufferline
-vim.keymap.set("n", "<leader>h", ":BufferLineMovePrev<CR>", { silent = true, desc = "Move buffer left" })
-vim.keymap.set("n", "<leader>l", ":BufferLineMoveNext<CR>", { silent = true, desc = "Move buffer right" })
+vim.keymap.set("n", "<leader>bh", ":BufferLineMovePrev<CR>", { silent = true, desc = "Move buffer left" })
+vim.keymap.set("n", "<leader>bl", ":BufferLineMoveNext<CR>", { silent = true, desc = "Move buffer right" })
+
+vim.keymap.set("n", "<leader>fh", "<cmd>Alpha<CR>", { desc = "Home screen" })

@@ -1,178 +1,113 @@
 return {
-  {
-    "folke/snacks.nvim",
-    priority = 1000,
-    lazy = false,
-
-    opts = {
-      dashboard = {
-        enabled = true,
-      },
-
-      picker = {
-        enabled = true,
-      },
-
-      notifier = {
-        enabled = true,
-      },
-
-      input = {
-        enabled = true,
-      },
-
-      indent = {
-        enabled = true,
-      },
-
-      scope = {
-        enabled = true,
-      },
-
-      words = {
-        enabled = true,
-      },
-
-      quickfile = {
-        enabled = true,
-      },
-
-      bigfile = {
-        enabled = true,
-      },
-
-      scroll = {
-        enabled = true,
-      },
-
-      statuscolumn = {
-        enabled = true,
-      },
+  "folke/snacks.nvim",
+  priority = 1000,
+  lazy = false,
+  opts = {
+    bigfile = { enabled = true },
+    dashboard = { enabled = true },
+    explorer = { enabled = true },
+    indent = { enabled = true },
+    input = { enabled = true },
+    notifier = { enabled = true },
+    picker = { enabled = true },
+    quickfile = { enabled = true },
+    scope = { enabled = true },
+    scroll = { enabled = false },
+    statuscolumn = { enabled = true },
+    words = { enabled = true },
+    scratch = { enabled = true },
+    profiler = { enabled = true },
+  },
+  keys = {
+    -- Top level
+    {
+      "<leader><space>",
+      function() Snacks.picker.files({ root = true }) end,
+      desc = "Find Files (Root Dir)",
+    },
+    {
+      "<leader>,",
+      function() Snacks.picker.buffers() end,
+      desc = "Buffers",
+    },
+    {
+      "<leader>.",
+      function() Snacks.scratch() end,
+      desc = "Toggle Scratch Buffer",
+    },
+    {
+      "<leader>/",
+      function() Snacks.picker.grep({ root = true }) end,
+      desc = "Grep (Root Dir)",
+    },
+    {
+      "<leader>:",
+      function() Snacks.picker.command_history() end,
+      desc = "Command History",
+    },
+    {
+      "<leader>dps",
+      function() Snacks.profiler.scratch() end,
+      desc = "Profiler Scratch Buffer",
+    },
+    {
+      "<leader>e",
+      function() Snacks.explorer({ root = true }) end,
+      desc = "Explorer Snacks (root dir)",
+    },
+    {
+      "<leader>E",
+      function() Snacks.explorer({ cwd = vim.fn.getcwd() }) end,
+      desc = "Explorer Snacks (cwd)",
     },
 
-    keys = {
-      -- Files
-      {
-        "<leader>ff",
-        function()
-          Snacks.picker.files()
-        end,
-        desc = "Find Files",
-      },
-
-      -- Grep
-      {
-        "<leader>fg",
-        function()
-          Snacks.picker.grep()
-        end,
-        desc = "Grep",
-      },
-
-      -- Buffers
-      {
-        "<leader>fb",
-        function()
-          Snacks.picker.buffers()
-        end,
-        desc = "Buffers",
-      },
-
-      -- Recent files
-      {
-        "<leader>fr",
-        function()
-          Snacks.picker.recent()
-        end,
-        desc = "Recent Files",
-      },
-
-      -- Directories
-      {
-        "<leader>fd",
-        function()
-          Snacks.picker.directories()
-        end,
-        desc = "Directories",
-      },
-
-      -- Projects
-      {
-        "<leader>fp",
-        function()
-          Snacks.picker.projects()
-        end,
-        desc = "Projects",
-      },
-
-      -- Git
-      {
-        "<leader>gs",
-        function()
-          Snacks.picker.git_status()
-        end,
-        desc = "Git Status",
-      },
-
-      {
-        "<leader>gl",
-        function()
-          Snacks.picker.git_log()
-        end,
-        desc = "Git Log",
-      },
-
-      -- Help
-      {
-        "<leader>fh",
-        function()
-          Snacks.picker.help()
-        end,
-        desc = "Help",
-      },
-
-      -- Commands
-      {
-        "<leader>fc",
-        function()
-          Snacks.picker.commands()
-        end,
-        desc = "Commands",
-      },
-
-      -- Keymaps
-      {
-        "<leader>fk",
-        function()
-          Snacks.picker.keymaps()
-        end,
-        desc = "Keymaps",
-      },
-
-      -- LSP
-      {
-        "gd",
-        function()
-          Snacks.picker.lsp_definitions()
-        end,
-        desc = "Go to Definition",
-      },
-
-      {
-        "gr",
-        function()
-          Snacks.picker.lsp_references()
-        end,
-        desc = "References",
-      },
-
-      {
-        "<leader>fs",
-        function()
-          Snacks.picker.lsp_symbols()
-        end,
-        desc = "LSP Symbols",
-      },
+    -- Find group
+    {
+      "<leader>fb",
+      function() Snacks.picker.buffers() end,
+      desc = "Buffers",
+    },
+    {
+      "<leader>fB",
+      function() Snacks.picker.buffers({ hidden = true, unloaded = true }) end,
+      desc = "Buffers (all)",
+    },
+    {
+      "<leader>fc",
+      function()
+        Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+      end,
+      desc = "Find Config File",
+    },
+    {
+      "<leader>fe",
+      function() Snacks.explorer({ root = true }) end,
+      desc = "Explorer Snacks (root dir)",
+    },
+    {
+      "<leader>fE",
+      function() Snacks.explorer({ cwd = vim.fn.getcwd() }) end,
+      desc = "Explorer Snacks (cwd)",
+    },
+    {
+      "<leader>ff",
+      function() Snacks.picker.files({ root = true }) end,
+      desc = "Find Files (Root Dir)",
+    },
+    {
+      "<leader>fF",
+      function() Snacks.picker.files({ cwd = vim.fn.getcwd() }) end,
+      desc = "Find Files (cwd)",
+    },
+    {
+      "<leader>fg",
+      function() Snacks.picker.git_files() end,
+      desc = "Find Files (git-files)",
+    },
+    {
+      "<leader>fp",
+      function() Snacks.picker.projects() end,
+      desc = "Projects",
     },
   },
 }
