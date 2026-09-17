@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+vim.opt.clipboard = "unnamedplus"
+
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
@@ -15,4 +17,6 @@ opt.copyindent = true
 opt.preserveindent = true
 
 opt.background = "dark"
+
+opt.fillchars = { eob = " " }
 

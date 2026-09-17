@@ -6,7 +6,7 @@ return {
 		local dashboard = require("alpha.themes.dashboard")
 
 		-- Set header
-		dashboard.section.header.val = {
+dashboard.section.header.val = {
 			[[                                                                     ]],
 			[[       ███████████           █████      ██                     ]],
 			[[      ███████████             █████                             ]],
@@ -18,9 +18,7 @@ return {
 			[[ ██████   ██  ███████████████   ██ █████████████████ ]],
 			[[ ██████   ██  ███████████████   ██ █████████████████ ]],
 		}
-
-		-- Set menu
-		dashboard.section.buttons.val = {
+dashboard.section.buttons.val = {
 			dashboard.button("f", " " .. " Find File", ":lua Snacks.picker.files({ root = true })<CR>"),
 			dashboard.button("n", " " .. " New File",  ":ene <BAR> startinsert<CR>"),
 			dashboard.button("p", " " .. " Projects",  ":lua Snacks.picker.projects()<CR>"),
@@ -29,10 +27,8 @@ return {
 			dashboard.button("q", " " .. " Quit", 	    ":qa<CR>")
 		}
 
-		-- Send config to alpha
-		alpha.setup(dashboard.opts)
+alpha.setup(dashboard.opts)
 
-		-- Disable folding on alpha buffer
 		vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
 	end,
 }

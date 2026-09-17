@@ -5,7 +5,12 @@ return {
   opts = {
     bigfile = { enabled = true },
     dashboard = { enabled = true },
-    explorer = { enabled = true },
+    explorer = { 
+        enabled = true,
+        win = {
+            winbar = false,
+        }
+    },
     indent = { enabled = true },
     input = { enabled = true },
     notifier = { enabled = true },

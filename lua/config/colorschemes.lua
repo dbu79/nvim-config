@@ -68,35 +68,8 @@ M.items = {
 		schemes = { "edge" },
 	},
 	{
-		repo = "marko-cerovac/material.nvim",
-		schemes = {
-			"material",
-			"material-darker",
-			"material-deep-ocean",
-			"material-lighter",
-			"material-oceanic",
-			"material-palenight",
-		},
-	},
-	{
 		repo = "Mofiqul/dracula.nvim",
 		schemes = { "dracula", "dracula-soft" },
-	},
-	{
-		repo = "projekt0n/github-nvim-theme",
-		schemes = {
-			"github_dark",
-			"github_dark_default",
-			"github_dark_dimmed",
-			"github_dark_high_contrast",
-			"github_light",
-			"github_light_default",
-			"github_light_high_contrast",
-		},
-	},
-	{
-		repo = "RRethy/base16-nvim",
-		schemes = { "base16-default-dark", "base16-default-light" },
 	},
 }
 
