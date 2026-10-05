@@ -15,7 +15,7 @@ local function run_file()
 		typescript = "npx ts-node " .. file,
 		sh = "bash " .. file,
 		cpp = string.format(
-			"g++ -std=c++17 -Wall %s -o /tmp/%s && /tmp/%s",
+			"g++ -std=c++20 -Wall %s -o /tmp/%s && /tmp/%s",
 			file, vim.fn.expand("%:t:r"), vim.fn.expand("%:t:r")
 		),
 		c = string.format(
